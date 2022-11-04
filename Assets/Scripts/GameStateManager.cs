@@ -5,17 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
-    public void startGame()
+    public void StartGame()
     {
         SceneManager.LoadScene("InGame");
     }
 
-    public void quit()
+    public void Quit()
     {
         Application.Quit();
     }
 
-    public void onGameOver()
+    public static void OnGameOver()
     {
         SceneManager.LoadScene("MainMenu");
     }

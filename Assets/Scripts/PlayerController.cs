@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
         {
             alive = false;
             rb.angularVelocity = 5000;
+            GameStateManager.OnGameOver();
         }
         else if (collision.gameObject.tag == "Score" && alive)
         {
