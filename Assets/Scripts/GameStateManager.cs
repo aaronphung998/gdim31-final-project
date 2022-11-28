@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,18 +6,72 @@ using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
+    public static Action OnGameOver;
+    public static float ObstacleSpeed;
+
+    [SerializeField]
+    private int accelerationTime;   // how much time before speeding up the obstacles
+    [SerializeField]
+    private float startSpeed;       // start speed
+    [SerializeField]
+    private float speedIncrement;     // how much speed will increase each interval
+
+    private static GameStateManager _instance;
+
+    private int incrementTime;
+
+    private static bool endGame;
+
+    private static float endTime;
+
+    void Start()
+    {
+        incrementTime = 0;
+        if (_instance == null)
+        {
+            _instance = this;
+            ObstacleSpeed = startSpeed;
+            DontDestroyOnLoad(_instance);
+            endGame = false;
+        }
+        else
+        {
+            if (_instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+        
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene("InGame");
+        endGame = false;
+        ObstacleSpeed = startSpeed;
+        incrementTime = 0;
     }
 
-    public void Quit()
+
+    public static void GameOver()
     {
-        Application.Quit();
+        endGame = true;
+        endTime = 2 + Time.time;
+        //SceneManager.LoadScene("MainMenu");
+        OnGameOver();
     }
 
-    public static void OnGameOver()
+    void Update()
     {
-        SceneManager.LoadScene("MainMenu");
+        if (Time.time >= incrementTime * accelerationTime)
+        {
+            incrementTime++;
+            ObstacleSpeed += speedIncrement;
+        }
+        if (endGame && Time.time >= endTime)
+        {
+            SceneManager.LoadScene("MainMenu");
+            endGame = false;
+        }
     }
 }

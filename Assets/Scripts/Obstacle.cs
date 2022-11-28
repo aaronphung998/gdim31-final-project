@@ -4,18 +4,27 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    public int speed;
+
+    public float speed;
+    public bool isMoving;
 
     // Start is called before the first frame update
     void Start()
     {
-        speed = 1;
+        speed = GameStateManager.ObstacleSpeed;
+        GameStateManager.OnGameOver += StopMoving;
+        isMoving = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.left * speed * Time.deltaTime);
+        if (isMoving)
+        {
+            speed = GameStateManager.ObstacleSpeed;
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
+        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,7 +37,21 @@ public class Obstacle : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        else if (tag == "Score" && collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
 
 
+    }
+
+    private void StopMoving()
+    {
+        isMoving = false;
+    }
+
+    public void OnDestroy()
+    {
+        GameStateManager.OnGameOver -= StopMoving;
     }
 }

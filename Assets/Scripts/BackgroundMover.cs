@@ -5,11 +5,12 @@ using UnityEngine;
 public class BackgroundMover : MonoBehaviour
 {
     [SerializeField]
-    private int speed;
+    private float speedFactor;
     [SerializeField]
     private float resetPos;
 
     private Vector3 startPos;
+    private bool isMoving;
 
 
 
@@ -17,15 +18,30 @@ public class BackgroundMover : MonoBehaviour
     void Start()
     {
         startPos = transform.position;
+        isMoving = true;
+        GameStateManager.OnGameOver += StopMoving;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(-speed * Time.deltaTime, 0f, 0f);
+        if (isMoving)
+        {
+            transform.position += new Vector3(-speedFactor * GameStateManager.ObstacleSpeed * Time.deltaTime, 0f, 0f);
+        }
         if (transform.position.x < resetPos)
         {
             transform.position = startPos;
         }
+    }
+
+    public void OnDestroy()
+    {
+        GameStateManager.OnGameOver -= StopMoving;
+    }
+
+    void StopMoving()
+    {
+        isMoving = false;
     }
 }

@@ -7,6 +7,9 @@ TagManager:
   - GroundTrigger
   - GameOver
   - ObstacleDespawner
+  - FlyPowerupTrigger
+  - FlyPowerdownTrigger
+  - Score
   layers:
   - Default
   - TransparentFX
