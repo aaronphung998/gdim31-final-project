@@ -57,7 +57,7 @@ public class GameStateManager : MonoBehaviour
     {
         endGame = true;
         endTime = 2 + Time.time;
-        //SceneManager.LoadScene("MainMenu");
+        //SceneManager.LoadScene("GameOver");
         OnGameOver();
     }
 
@@ -70,7 +70,7 @@ public class GameStateManager : MonoBehaviour
         }
         if (endGame && Time.time >= endTime)
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("GameOver");
             endGame = false;
         }
     }
