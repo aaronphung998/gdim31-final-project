@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
 
     public void Quit()
     {
+        PlayerPrefs.DeleteAll();
         Application.Quit();
     }
 }

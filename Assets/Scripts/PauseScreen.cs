@@ -53,7 +53,7 @@ public class PauseScreen : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("Quit game.");
+        PlayerPrefs.DeleteAll();
         Application.Quit();
     }
 

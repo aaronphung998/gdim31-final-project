@@ -12,11 +12,17 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _score.text = "Highest Score: " + PlayerPrefs.GetInt("score");
+        _score.text = "High Score: " + PlayerPrefs.GetInt("score");
     }
 
     public void BackToMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Quit()
+    {
+        PlayerPrefs.DeleteAll();
+        Application.Quit();
     }
 }
