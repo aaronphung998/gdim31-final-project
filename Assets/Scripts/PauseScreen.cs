@@ -8,6 +8,7 @@ public class PauseScreen : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
+    public GameObject instructions;
 
     // Update is called once per frame
     void Update()
@@ -28,6 +29,7 @@ public class PauseScreen : MonoBehaviour
     public IEnumerator Resume()
     {
         pauseMenuUI.SetActive(false);
+        instructions.SetActive(false);
         yield return new WaitForSecondsRealtime(3);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -44,9 +46,9 @@ public class PauseScreen : MonoBehaviour
         Debug.Log(Time.timeScale.ToString());
     }
 
-    public void LoadMenu()
+    public void GetInstructions()
     {
-        SceneManager.LoadScene("MainMenu");
+        instructions.SetActive(true);
     }
 
     public void QuitGame()
@@ -58,5 +60,10 @@ public class PauseScreen : MonoBehaviour
     public void ResumeButton()
     {
         StartCoroutine(Resume());
+    }
+
+    public void ExitInstructions()
+    {
+        instructions.SetActive(false);
     }
 }
