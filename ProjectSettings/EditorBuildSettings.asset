@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/InGame.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
+    path: Assets/Scenes/GameOverCrab.unity
     guid: e55ed044fdbf0e347acb8ea24f9d49cd
+  - enabled: 1
+    path: Assets/Scenes/GameOverFish.unity
+    guid: 62df0ccc031317c408a81eb653411c91
   m_configObjects: {}

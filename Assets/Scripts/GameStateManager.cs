@@ -70,7 +70,12 @@ public class GameStateManager : MonoBehaviour
         }
         if (endGame && Time.time >= endTime)
         {
-            SceneManager.LoadScene("GameOver");
+            if (!PlayerController.isFlying)
+            {
+                SceneManager.LoadScene("GameOverCrab");
+            } else {
+                SceneManager.LoadScene("GameOverFish");
+            }
             endGame = false;
         }
     }

@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded;
 
-    private bool isFlying;
+    public static bool isFlying;
 
     private float xPosition;
 
