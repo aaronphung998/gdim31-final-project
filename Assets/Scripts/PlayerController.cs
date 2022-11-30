@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour
 
     private float xPosition;
 
+    public AudioSource coinSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -100,6 +102,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "GameOver")
         {
+            deathSound.Play();
             alive = false;
             rb.angularVelocity = 5000;
             if (PlayerPrefs.GetInt("score") < score)
@@ -110,6 +113,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Score" && alive)
         {
+            coinSound.Play();
             increaseScore(coinValue);
         }
         else if (collision.gameObject.tag == "GroundTrigger")
