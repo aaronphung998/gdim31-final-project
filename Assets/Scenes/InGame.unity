@@ -2282,7 +2282,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 786c09d421821d5438957c7f452887e1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e32c5c1a4bf411247bcf83a787826c42, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2865,6 +2865,8 @@ MonoBehaviour:
   coinValue: 100
   maxFlyingVelocity: 20
   coinSound: {fileID: 518916434}
+  crabSound: {fileID: 1296324311}
+  fishSound: {fileID: 0}
 --- !u!1 &1786670955
 GameObject:
   m_ObjectHideFlags: 0
