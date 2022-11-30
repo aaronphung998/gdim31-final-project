@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     private float scoreIncrementTime;     // time between each time that the game increments the player's score
     [SerializeField]
     private int coinValue;
+    [SerializeField]
+    private float maxFlyingVelocity;
 
     private int score;
     private float nextScore;
@@ -76,7 +78,14 @@ public class PlayerController : MonoBehaviour
         }
         else if (isFlying && alive)
         {
-            
+            if (rb.velocity.y > maxFlyingVelocity)
+            {
+                rb.velocity = transform.up * maxFlyingVelocity;
+            }
+            else if (rb.velocity.y < -maxFlyingVelocity)
+            {
+                rb.velocity = transform.up * -maxFlyingVelocity;
+            }
             transform.eulerAngles = Vector3.forward * Mathf.Atan(rb.velocity.y / 2 / (GameStateManager.ObstacleSpeed)) * 180 / Mathf.PI;
         }
         if (Time.time > nextScore && alive)

@@ -30,7 +30,7 @@ public class PauseScreen : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         instructions.SetActive(false);
-        yield return new WaitForSecondsRealtime(3);
+        yield return new WaitForSecondsRealtime((float)0.5);
         Time.timeScale = 1f;
         GameIsPaused = false;
         AudioListener.pause = false;
