@@ -1852,7 +1852,7 @@ RectTransform:
   m_GameObject: {fileID: 1028150109}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.93458074, y: 0.93458074, z: 0.93458074}
+  m_LocalScale: {x: 1.1729066, y: 1.1729066, z: 1.1729066}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2029688163}
@@ -1861,7 +1861,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: -11}
+  m_AnchoredPosition: {x: -2.9263, y: -12.385}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1028150111
@@ -2694,7 +2694,7 @@ RectTransform:
   m_GameObject: {fileID: 1379436737}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.9082885, y: 2.4869123, z: 2.4869123}
+  m_LocalScale: {x: 4.220654, y: 2.4869123, z: 2.4869123}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1841670741}
@@ -2725,7 +2725,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cb7dcb279073e8d4490fe5687b25ee33, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a73e14f00c00b934bb5fd8221146d762, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2796,7 +2796,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 125, y: 106}
+  m_AnchoredPosition: {x: 191, y: 107}
   m_SizeDelta: {x: 30.1501, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1614966112
@@ -3378,7 +3378,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.9, y: 5.8101997}
+  m_AnchoredPosition: {x: -1, y: -1}
   m_SizeDelta: {x: 7.747, y: 11.6205}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2029688164
@@ -3428,8 +3428,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 21
+  m_fontSizeBase: 21
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
