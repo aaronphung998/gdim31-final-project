@@ -41,6 +41,9 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded;
 
+    private bool isInvincible;
+    private float timeAt;
+
     public static bool isFlying;
 
     private float xPosition;
@@ -53,8 +56,10 @@ public class PlayerController : MonoBehaviour
     {
         alive = true;
         score = 0;
+        timeAt = 0;
         isGrounded = false;
         isFlying = false;
+        isInvincible = false;
         xPosition = transform.position.x;
         nextScore = Time.time + scoreIncrementTime;
         changeSprite(groundSprite);
@@ -114,14 +119,28 @@ public class PlayerController : MonoBehaviour
             nextScore = Time.time + scoreIncrementTime;
             increaseScore(1);
         }
+        if (isInvincible)
+        {
+            if (Time.time - timeAt > 4f)
+            {
+                spriteRenderer.color = Color.white;
+                isInvincible = false;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.tag == "GameOver")
+        if (collision.gameObject.tag == "GameOver" && !isInvincible)
         {
             Die();
+        }
+        else if (collision.gameObject.tag == "Invincible")
+        {
+            timeAt = Time.time;
+            spriteRenderer.color = Color.yellow;
+            isInvincible = true;
         }
         else if (collision.gameObject.tag == "Score" && alive)
         {

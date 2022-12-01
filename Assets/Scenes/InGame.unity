@@ -3067,6 +3067,7 @@ MonoBehaviour:
   groundCoinPrefabs:
   - {fileID: 3608957102964725241, guid: 07450402a6aca4a45a8f75bfc602d738, type: 3}
   - {fileID: 1437650861512343004, guid: d1fe34c26d7d90847ac60c0f1b1f3390, type: 3}
+  - {fileID: 3299967186810036872, guid: 1db9ef44952c7c348bdf593874aa9863, type: 3}
   airObstPrefabs:
   - {fileID: 1487073210641108907, guid: 99de2df41383f4a4084a577121e4791d, type: 3}
   - {fileID: 7529155018365106083, guid: 75f46fd13a429054dbc2ab4526e870a4, type: 3}
@@ -3076,6 +3077,8 @@ MonoBehaviour:
   - {fileID: 5357973138216123132, guid: 6083a486566cc9647a7ed3fbbcd460ca, type: 3}
   - {fileID: 3608957102964725241, guid: 07450402a6aca4a45a8f75bfc602d738, type: 3}
   - {fileID: 1437650861512343004, guid: d1fe34c26d7d90847ac60c0f1b1f3390, type: 3}
+  - {fileID: 3299967186810036872, guid: 1db9ef44952c7c348bdf593874aa9863, type: 3}
+  - {fileID: 3299967186810036872, guid: 1db9ef44952c7c348bdf593874aa9863, type: 3}
   flyPowerup: {fileID: 368775957684603027, guid: 35724231fce66be4ead72e68e4fb97e7, type: 3}
   flyPowerdown: {fileID: 4923806273569304003, guid: 72474bfdeda88d446b67d2341abc5276, type: 3}
   spawnMinTime: 1

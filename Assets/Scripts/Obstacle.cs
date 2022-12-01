@@ -37,7 +37,7 @@ public class Obstacle : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else if (tag == "Score" && collision.gameObject.tag == "Player")
+        else if ((tag == "Score" || tag == "Invincible") && collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
         }
