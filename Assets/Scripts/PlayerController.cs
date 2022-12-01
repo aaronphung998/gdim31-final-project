@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
     private float maxFlyingVelocity;
     [SerializeField]
     private AudioSource bgm;
+    [SerializeField]
+    private AudioSource coinSound;
+    [SerializeField]
+    public AudioSource portalSound;
 
     private int score;
     private float nextScore;
@@ -47,9 +51,6 @@ public class PlayerController : MonoBehaviour
     public static bool isFlying;
 
     private float xPosition;
-
-    public AudioSource coinSound;
-    public AudioSource portalSound;
 
     // Start is called before the first frame update
     void Start()
