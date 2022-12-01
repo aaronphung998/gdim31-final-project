@@ -29,18 +29,9 @@ public class Obstacle : MonoBehaviour
 
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
-
         //This method is called when the object enters a collider trigger. 
         //We don't want an infinite number of pillars in the game world 
         //Here we should see if the pillar has entered the "Despawn" trigger so that we can destroy the object.
-        if (collision.gameObject.tag == "Despawn")
-        {
-            Destroy(gameObject);
-        }
-        else if ((tag == "Score" || tag == "Invincible") && collision.gameObject.tag == "Player")
-        {
-            Destroy(gameObject);
-        }
     }
 
     private void StopMoving()
