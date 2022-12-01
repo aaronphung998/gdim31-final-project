@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = transform.up * upForce;
         }
-        else if (Input.GetKey(KeyCode.Space) && alive && isFlying)
+        else if (Input.GetKey(KeyCode.Space) && alive && isFlying && !PauseScreen.GameIsPaused)
         {
             rb.AddRelativeForce(transform.up * flyForce);
         }
