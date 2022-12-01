@@ -31,8 +31,6 @@ public class PlayerController : MonoBehaviour
     private int coinValue;
     [SerializeField]
     private float maxFlyingVelocity;
-    [SerializeField]
-    private AudioSource bgm;
 
     private int score;
     private float nextScore;
@@ -46,6 +44,7 @@ public class PlayerController : MonoBehaviour
     private float xPosition;
 
     public AudioSource coinSound;
+    public AudioSource portalSound;
 
     // Start is called before the first frame update
     void Start()
@@ -57,19 +56,6 @@ public class PlayerController : MonoBehaviour
         xPosition = transform.position.x;
         nextScore = Time.time + scoreIncrementTime;
         changeSprite(groundSprite);
-    }
-
-    private void Die()
-    {
-        alive = false;
-        deathSound.Play();
-        rb.angularVelocity = 5000;
-        bgm.Stop();
-        if (PlayerPrefs.GetInt("score") < score)
-        {
-            PlayerPrefs.SetInt("score", score);
-        }
-        GameStateManager.GameOver();
     }
 
     // Update is called once per frame
@@ -117,7 +103,14 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "GameOver")
         {
-            Die();
+            deathSound.Play();
+            alive = false;
+            rb.angularVelocity = 5000;
+            if (PlayerPrefs.GetInt("score") < score)
+            {
+                PlayerPrefs.SetInt("score", score);
+            }
+            GameStateManager.GameOver();
         }
         else if (collision.gameObject.tag == "Score" && alive)
         {
@@ -131,11 +124,13 @@ public class PlayerController : MonoBehaviour
         else if (collision.gameObject.tag == "FlyPowerupTrigger")
         {
             isFlying = true;
+            portalSound.Play();
             changeSprite(airSprite);
         }
         else if (collision.gameObject.tag == "FlyPowerdownTrigger")
         {
             isFlying = false;
+            portalSound.Play();
             changeSprite(groundSprite);
         }
 
