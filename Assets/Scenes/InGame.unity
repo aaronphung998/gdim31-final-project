@@ -2859,14 +2859,12 @@ MonoBehaviour:
   scoreDisplay: {fileID: 208757391}
   deathSound: {fileID: 723481172}
   spriteRenderer: {fileID: 2025977292}
-  groundSprite: {fileID: 21300000, guid: afa7cb371cb61404f9918a5ea5a1eeda, type: 3}
-  airSprite: {fileID: 21300000, guid: 83cdeb356370fe449836901e74696d90, type: 3}
+  groundSprite: {fileID: 21300000, guid: c2734bbab77bafd408e27c252c7757b5, type: 3}
+  airSprite: {fileID: 21300000, guid: 45b40f113ef7ee647a99e36312c9a727, type: 3}
   scoreIncrementTime: 0.25
   coinValue: 100
-  maxFlyingVelocity: 20
+  maxFlyingVelocity: 15
   coinSound: {fileID: 518916434}
-  crabSound: {fileID: 1296324311}
-  fishSound: {fileID: 0}
 --- !u!1 &1786670955
 GameObject:
   m_ObjectHideFlags: 0
@@ -3131,7 +3129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2025977290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0000001703, y: 0.00000011921, z: 0}
+  m_LocalPosition: {x: -0.1, y: -0.23, z: 0}
   m_LocalScale: {x: 0.34109205, y: 0.47752887, z: 0.47752887}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3179,7 +3177,7 @@ SpriteRenderer:
   m_SortingLayerID: -516475391
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: afa7cb371cb61404f9918a5ea5a1eeda, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2734bbab77bafd408e27c252c7757b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
