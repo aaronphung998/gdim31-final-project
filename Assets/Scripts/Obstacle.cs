@@ -33,7 +33,7 @@ public class Obstacle : MonoBehaviour
         //This method is called when the object enters a collider trigger. 
         //We don't want an infinite number of pillars in the game world 
         //Here we should see if the pillar has entered the "Despawn" trigger so that we can destroy the object.
-        if (collision.gameObject.tag == "Despawn")
+        if (collision.gameObject.tag == "ObstacleDespawner")
         {
             Destroy(gameObject);
         }

@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 181027171}
   - component: {fileID: 181027170}
   - component: {fileID: 181027169}
+  - component: {fileID: 181027172}
   m_Layer: 0
   m_Name: ObstacleDespawner
   m_TagString: ObstacleDespawner
@@ -234,6 +235,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &181027172
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181027168}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &208757389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2864,6 +2886,7 @@ MonoBehaviour:
   scoreIncrementTime: 0.25
   coinValue: 100
   maxFlyingVelocity: 15
+  bgm: {fileID: 1296324311}
   coinSound: {fileID: 518916434}
 --- !u!1 &1786670955
 GameObject:
@@ -2930,7 +2953,7 @@ MonoBehaviour:
   spawnMaxTime: 2
   minSpawnsBeforePowerup: 6
   maxSpawnsBeforePowerup: 9
-  chanceOfCoin: 0.1
+  chanceOfCoin: 0.2
 --- !u!1 &1804167320
 GameObject:
   m_ObjectHideFlags: 0

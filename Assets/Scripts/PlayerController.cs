@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
     private int coinValue;
     [SerializeField]
     private float maxFlyingVelocity;
+    [SerializeField]
+    private AudioSource bgm;
 
     private int score;
     private float nextScore;
@@ -55,6 +57,19 @@ public class PlayerController : MonoBehaviour
         xPosition = transform.position.x;
         nextScore = Time.time + scoreIncrementTime;
         changeSprite(groundSprite);
+    }
+
+    private void Die()
+    {
+        alive = false;
+        deathSound.Play();
+        rb.angularVelocity = 5000;
+        bgm.Stop();
+        if (PlayerPrefs.GetInt("score") < score)
+        {
+            PlayerPrefs.SetInt("score", score);
+        }
+        GameStateManager.GameOver();
     }
 
     // Update is called once per frame
@@ -102,14 +117,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "GameOver")
         {
-            deathSound.Play();
-            alive = false;
-            rb.angularVelocity = 5000;
-            if (PlayerPrefs.GetInt("score") < score)
-            {
-                PlayerPrefs.SetInt("score", score);
-            }
-            GameStateManager.GameOver();
+            Die();
         }
         else if (collision.gameObject.tag == "Score" && alive)
         {
