@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.Space) && alive && isFlying && !PauseScreen.GameIsPaused)
         {
-            rb.AddRelativeForce(transform.up * flyForce);
+            rb.velocity = transform.up * rb.velocity.y + transform.up * flyForce;
         }
         if (transform.position.x != xPosition && alive)
         {
