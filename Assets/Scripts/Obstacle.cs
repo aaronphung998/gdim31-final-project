@@ -9,7 +9,7 @@ public class Obstacle : MonoBehaviour
     public bool isMoving;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         speed = GameStateManager.ObstacleSpeed;
         GameStateManager.OnGameOver += StopMoving;
@@ -17,7 +17,7 @@ public class Obstacle : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (isMoving)
         {
@@ -27,7 +27,7 @@ public class Obstacle : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public virtual void OnTriggerEnter2D(Collider2D collision)
     {
 
         //This method is called when the object enters a collider trigger. 
@@ -41,8 +41,6 @@ public class Obstacle : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-
     }
 
     private void StopMoving()
